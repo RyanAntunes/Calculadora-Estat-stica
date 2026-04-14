@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Estatística Nome do Grupo versão 1.0</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero card">
+      <div>
+        <span class="badge">Prova P1</span>
+        <h1>Calculadora Estatística Daniel Churros</h1>
+        <p>
+          Calcula Média Aritmética, Moda, Mediana, Amplitude Total e Desvio Padrão para:
+          dados não agrupados, dados agrupados sem intervalo de classe e dados agrupados com
+          intervalo de classe.
+        </p>
+      </div>
+    </section>
+
+    <section class="grid-layout">
+      <div class="card controls-card">
+        <h2>Entrada de dados</h2>
+
+        <label for="dados">Valores separados por vírgula</label>
+        <textarea id="dados" rows="8" placeholder="Ex.: 12, 5, 8, 12, 20"></textarea>
+
+        <div class="helper-text" id="helperText">
+          Informe os valores brutos. A calculadora identifica automaticamente o tipo de cálculo.
+        </div>
+
+        <div class="actions">
+          <button id="btnCalcular" class="primary">Calcular</button>
+          <button id="btnLimpar" class="secondary">Limpar</button>
+        </div>
+
+        <div class="sample-actions">
+          <button class="sample" data-sample="1">Carregar Situação 1</button>
+          <button class="sample" data-sample="2">Carregar Situação 2</button>
+          <button class="sample" data-sample="3">Carregar Situação 3</button>
+        </div>
+      </div>
+
+      <div class="card results-card">
+        <div class="results-header">
+          <div>
+            <h2>Resultados</h2>
+            <p id="resultadoTipo">Aguardando cálculo...</p>
+          </div>
+          <div class="results-actions">
+            <div class="status" id="statusBox">Pronto</div>
+            <div class="top-info">
+              <span class="info-trigger" tabindex="0">i</span>
+              <div id="observacoes" class="info-tooltip">Passe o mouse no ícone para visualizar a observação.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span>Média</span>
+            <strong id="res-media">-</strong>
+          </div>
+          <div class="stat-box">
+            <span>Mediana</span>
+            <strong id="res-mediana">-</strong>
+          </div>
+          <div class="stat-box">
+            <span>Moda</span>
+            <strong id="res-moda">-</strong>
+          </div>
+          <div class="stat-box">
+            <span>Amplitude Total</span>
+            <strong id="res-amplitude">-</strong>
+          </div>
+          <div class="stat-box">
+            <span>Desvio Padrão</span>
+            <strong id="res-desvio">-</strong>
+          </div>
+          <div class="stat-box">
+            <span>Quantidade (n)</span>
+            <strong id="res-quantidade">-</strong>
+          </div>
+        </div>
+
+        <div class="details-grid single-detail">
+          <div class="detail-card">
+            <h3>Rol</h3>
+            <div id="resumoDados" class="detail-content">Nenhum cálculo realizado.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card table-card is-hidden" id="tableCard">
+      <div class="table-header">
+        <h2>Tabela auxiliar</h2>
+        <p id="tableDescription">A distribuição será exibida após o cálculo.</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="freqTable">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="formula-section" id="formulaSection">
+        <h3>Fórmulas</h3>
+        <div class="formula-grid" id="formulaGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
